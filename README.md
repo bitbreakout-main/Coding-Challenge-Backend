@@ -50,3 +50,23 @@ curl -X POST http://localhost:8000/market \
   ```
 
 ---
+
+## How to Run
+
+```bash
+docker-compose up --build
+```
+
+### Test WebSocket
+```bash
+wscat -c ws://localhost:8000/ws/depth
+```
+
+### Test Market Order
+```bash
+curl -X POST http://localhost:8000/market \
+  -H "Content-Type: application/json" \
+  -d '{"side": "buy", "amount": 0.5}'
+```
+
+---
